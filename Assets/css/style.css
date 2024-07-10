@@ -1,0 +1,1158 @@
+:root{
+    --color-bg-primary: hsl(330, 79%, 93%);
+    --color-bg-secondary: #e94999;
+    --color-bg-neutral-light: hsl(0, 2%, 90%);
+    --color-bg-neutral: hsl(0, 0%, 85%);
+    --color-bg-beige: hsl(0, 0%, 93%);
+    --color-bg-dark: hsl(0, 0%, 0%);
+    --color-bg-light: hsl(210, 17%, 98%);
+    --color-bg-accent: hsl(96, 100%, 96%);
+    --color-bg-comp: hsl(150, 78%, 60%);
+
+    --color-btn-primary: hsl(97, 100%, 35%);
+    --color-btn-secondary: hsl(97, 100%, 35%);
+    --color-btn-hover: hsl(200, 100%, 38%);
+
+    --color-text-primary: hsl(210, 11%, 15%);
+    --color-text-secondary: hsl(210, 9%, 31%);
+    --color-text-light: hsl(210, 17%, 98%);
+    --color-text-accent: hsl(158, 75%, 44%);
+
+    --color-star: hsl(49, 100%, 50%);
+
+    --text-xxl: 2.5rem;
+    --text-xl: 2rem;
+    --text-lg: 1.75rem;
+    --text-md-plus: 1.5rem;
+    --text-md: 1.25rem;
+    --text-sm: 1rem;
+    --text-xs: .95rem;
+
+    --border-radius-xxl: 45px;
+    --border-radius-xl: 20px;
+    --border-radius-lg: 15px;
+    --border-radius: 10px;
+    --border-radius-sm: 5px;
+
+    --font-family-body: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-heading: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    --duration: 0.3s;
+    --ease: ease-in-out;
+}
+
+/* CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-family-body);
+  font-size: 18px;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.2;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a{
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Composition */
+
+/* Utility */
+.wrapper {
+    max-width: 1040px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_column{
+    flex-direction: column;
+}
+
+.cta-btn {
+    background-color: var(--color-btn-primary);
+    color: var(--color-text-light);
+    max-width: fit-content;
+    text-decoration: none;
+    padding: .85rem 2rem;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: 700;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    margin-block: .25rem;
+    transition: var(--duration);
+}
+.cta-btn:hover{
+    background-color: var(--color-btn-hover);
+    transition: var(--duration);
+}
+.cta-btn i{
+    transition: var(--duration);
+}
+.cta-btn:hover i{
+    transform: translateX(10px);
+    transition: var(--duration);
+}
+.stars i{
+  display: flex;
+  align-items: center;
+}
+.stars i::before{
+  font-size: 1.25rem;
+  color: var(--color-star);
+}
+.flag_icon{
+  max-height: 16px;
+}
+
+/* Block */
+
+    /* Header */
+    #Banner .discount{
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-light);
+        padding: .5rem 1rem;
+        margin-inline: auto;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #Banner .discount h3{
+        font-size: var(--text-sm);
+        font-weight: 700;
+        margin-block: 0;
+    }
+
+    #Banner .brand{
+        background-color: var(--color-bg-secondary);
+        display: grid;
+        place-content: center;
+        margin-inline: auto;
+        padding-inline: 1rem;
+    }
+
+    #Banner .brand img{
+      max-height: 50px;
+    }
+    
+    /* Hero */
+    #Hero{
+        position: relative;
+        z-index: 20;
+    }
+    #Hero > .bg:first-child{
+        background-color: var(--color-bg-primary);
+    }
+    #Hero .cta{
+        background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Vibes_Hero_v3_800x.png?v=1720466031");
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+    }
+    #Hero .hero_body{
+        padding-top: 1.25rem;
+        max-width: 55ch;
+    }
+    #Hero .hero_body h1{
+        font-size: var(--text-xl);
+        font-weight: 800;
+        margin-block: 0rem 1.5rem;
+        letter-spacing: .75px;
+        
+    }
+    #Hero .hero_body h3{
+        font-size: var(--text-md);
+        color: var(--color-text-primary);
+        padding-bottom: 1rem;
+        letter-spacing: .75px;
+    }
+    #Hero .hero_body ul{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    #Hero .hero_body ul li{
+        gap: .25rem;
+        align-items: center;
+    }
+    #Hero .hero_body ul li img{
+      max-width: 20px;
+      max-height: 20px;
+      aspect-ratio: 1/1;
+  }
+    #Hero .authority{
+        align-items: center;
+        gap: .5rem;
+    }
+    #Hero .rating{
+        font-size: var(--text-lg);
+        font-weight: 600;  
+    }
+    #Hero .count{
+        font-size: var(--text-xs);
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        
+    }
+    #Hero > .bg:last-child{
+        background-color: var(--color-bg-neutral);
+        padding-block: 4rem .25rem;
+        text-align: center;
+    }
+    #Hero .review{
+        background-color: var(--color-bg-light);
+        margin-inline: 1rem;
+        margin-top: -1rem;
+        border-radius: var(--border-radius-xl);
+        transform: translateY(40%);
+    }
+    #Hero .review .review_flex{
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.15);
+        border-radius: var(--border-radius-xl);
+        padding-inline: 1rem;
+    }
+    #Hero .review .review_flex .left{
+        flex-direction: column;
+        text-align: center;
+        margin-block: .35rem .5rem;
+    }
+    #Hero .review .reviewer_img{
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-bottom: .2rem;
+        margin-inline: auto;
+    }
+    #Hero .review .reviewer_name{
+        font-size: var(--text-xs);
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
+    #Hero .review .review_flex .right{
+        margin-block: .35rem .5rem;
+    }
+
+    #Hero .review .review_title{
+        text-transform: capitalize;
+    }
+    #Hero .review .review_text{
+        margin-top: 1rem;
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+        font-weight: 600;
+    }
+
+    /* Media */
+    .media ul{
+        gap: 5rem;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 2rem
+    }
+    .media ul li{
+        max-width: 150px;
+    }
+    .media ul li:first-child{
+        height: auto;
+        flex-basis: 5%;     
+    }
+    .media ul li:nth-child(2){
+        flex-basis: 20%;
+    }
+    .media ul li:nth-child(3){
+        flex-basis: 20%;
+    }
+    .media ul li:nth-child(4){
+        flex-basis: 10%;
+    }
+    .media ul li:last-child{
+        flex-basis: 7.5%;
+    }
+
+    /* Plan */
+    #Plan{
+      position: relative;
+      z-index: 20;
+    }
+    #Plan > .bg:first-child{ 
+        background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Background_image_with_citrus_1920x.png?v=1720453935");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #fff;
+    }
+    #Plan .pitch{
+      max-width: 55ch;
+      margin-inline: auto;
+    }
+    #Plan h2{
+      text-align: center;
+      padding-block: 2rem;
+    }
+    #Plan .pitch .prompt{
+      text-align: center;
+      margin-bottom: 1rem;
+      margin-inline: auto;
+      max-width: 45ch;
+    }
+    #Plan .pitch ul li{
+      gap: .5rem;
+    }
+    #Plan .pitch .ellipses{
+      max-width: 42ch;
+      text-align: center;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+    #Plan .plan ul{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    #Plan .plan_card{
+      border: 3px solid var(--color-bg-dark);
+      border-radius: var(--border-radius-lg);
+      padding: 1rem;
+      max-width: 55ch;
+      margin-inline: auto;
+      text-align: center;
+    }
+    #Plan .plan_card h3{
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-block: 0;
+    }
+    #Plan .cta-btn{
+      margin-inline: auto;
+      margin-top: 2rem;
+    }
+    #Plan .btn_wrapper{
+      padding-bottom: 2rem;
+    }
+    #Plan .underline {
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/squiggly_line.png?v=1720631085");
+      background-size: cover;
+      width: 100%;
+      height: 7px;
+      margin-inline: auto;
+    }
+    #Plan .underline_wrapper{
+      max-width: fit-content;
+      margin-inline: auto;
+      margin-bottom: .75rem;
+    }
+   
+    /* Authority */
+    #Authority > .bg:first-child{
+        background-color: var(--color-bg-primary);
+    }
+    #Authority .top{
+      gap: 1rem;
+      padding-block: 3rem;
+      position: relative;
+      justify-content: center;
+    }
+    #Authority .top .left{
+      flex: 1;
+      max-width: 45ch;
+    }
+    #Authority .top .left h2{
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    #Authority .top .left p{
+      font-size: var(--text-md);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    #Authority .top .right{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    #Authority .top .right img{
+      max-width: 100%;
+    }
+
+    #Authority > .bg:last-child{
+        background-color: var(--color-bg-neutral-light);
+    }
+    #Authority .bottom{
+      padding-block: 2rem;
+      position: relative;
+      gap: 4rem;
+      justify-content: center;
+      align-items: center;
+    }
+    #Authority .bottom .left{
+      flex:1;
+      max-width: fit-content;
+    }
+    #Authority .bottom .right{
+      flex: 1;
+      max-width: fit-content;
+    }
+    #Authority .bottom .right h3{
+      max-width: 48ch;
+      margin-inline: auto;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: .5px;
+      font-size: var(--text-md);
+    }
+  
+    /* Video */
+    #Video{
+      margin-block: 3rem;
+    }
+    #Video .flex{
+      margin-inline: auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    #Video .how{
+      max-width: fit-content;
+      position: relative;
+      padding-top: 2rem;
+      border: 3px solid black;
+      border-radius: var(--border-radius-lg);
+    }
+    #Video .how h2{
+      font-size: var(--text-md-plus);
+      font-weight: 700;
+      padding-inline: 1rem;
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+    }
+    #Video .trust{
+      max-width: fit-content;
+      position: relative;
+      padding-top: 2rem;
+      border: 3px solid black;
+      border-radius: var(--border-radius-lg);
+    }
+    #Video .trust h2{
+      font-size: var(--text-md-plus);
+      font-weight: 700;
+      padding-inline: 1rem;
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      text-wrap: nowrap;
+    }
+  
+    /* Benefits */
+    #Benefits .bg{
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/serum_molecule_355x.png?v=1720534648"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/final_model_molecule_310x.png?v=1720534649");
+      background-position: 10px center, 104% center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    #Benefits .pitch{
+      background-color: var(--color-bg-primary);
+    }
+    #Benefits .pitch .wrapper{
+      max-width: 1150px;
+    }
+    #Benefits .pitch h2{
+      text-align: center;
+      max-width: 50ch;
+      text-wrap: wrap;
+      margin-bottom: .5rem;
+    }
+    #Benefits .pitch .flex{
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 50ch;
+      margin-inline: auto;
+      padding: 1rem;
+    }
+    #Benefits .pitch .flex p{
+      text-wrap: balance;
+    }
+    #Benefits .graphic .graph{
+      padding-block: 2rem;
+    }
+    #Benefits .mbg{
+      background-color: var(--color-bg-accent);
+      padding: 2rem 3rem;
+      border-radius: var(--border-radius-xxl);
+      max-width: 890px;
+      margin-inline: auto;
+      margin-bottom: 5rem;
+      border: 1px solid var(--color-bg-neutral);
+      box-shadow: -3px 3px 6px 3px rgba(0, 0, 0, 0.2);
+    }
+    #Benefits .mbg .flex{
+      gap: 3rem;
+      margin-inline: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    #Benefits .mbg h2{
+      color: var(--color-btn-primary);
+      text-align: center;
+      font-size: var(--text-lg);
+
+    }
+    #Benefits .mbg .flex .left{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+      max-width: 55ch;
+      text-align: center;
+    }
+    #Benefits .mbg .flex .right{
+      flex: 1;
+      max-width: 180px;
+    }
+    #Benefits .mbg .flex.cta-btn{
+      gap: 1rem;
+    }
+    #Benefits .underline {
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/white_squiggly.png?v=1720631085");
+      background-size: cover;
+      width: 85%;
+      height: 10px;
+      margin-inline: auto;
+    }
+    #Benefits .underline_wrapper{
+      max-width: fit-content;
+      margin-inline: auto;
+      margin-bottom: .5rem;
+    }
+    #Benefits .mbg .underline{
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/squiggly_line.png?v=1720631085");
+      width: 100%;
+    }
+    
+    /* Problem */
+    #Problem {
+      margin-bottom: 0;
+    }
+    #Problem .bg{
+        padding-top: .5rem;
+        background-color: var(--color-bg-primary);
+        background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/citrus_right_side_350x.png?v=1720542587");
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 15%;
+    }
+    #Problem .bg .wrapper h2{
+        font-size: var(--text-md-plus);
+        text-align: center;
+        margin-block: 2rem;
+    }
+    #Problem .bg .wrapper .flex{
+      gap: 3rem;
+      margin-inline: auto;
+      justify-content: center;
+    }
+    #Problem .bg .wrapper .flex .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        max-width: 46ch;
+    }
+    #Problem .bg .wrapper .flex .left p{
+      font-size: 19px;
+      margin-bottom: 1rem;
+      text-wrap: balance;
+  }
+    #Problem .bg .wrapper .flex .right{
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/sparkle_transparant.png?v=1720534648");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 395px;
+        position: relative;
+    }
+    #Problem .bg .wrapper .flex .right img{
+      position: absolute;
+    }
+
+    /* Features */
+    #Features .bg{
+        background-color: var(--color-bg-light);
+        background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/fruity_background_1920x.png?v=1720626322");
+        background-repeat: repeat;
+        background-size: contain;
+    }
+    #Features .wrapper>.flex{
+        gap: 8rem;
+        margin-inline: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    #Features .flex .left{
+      flex: 1;
+      max-width: 350px;
+    }
+    #Features .flex .right{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding-block: 3rem;
+      flex: 1;
+      text-align: center;
+      max-width: 45ch;
+    }
+    #Features .flex .right h2{
+      font-size: var(--text-md-plus);
+    }
+    #Features .flex .right p{
+      font-size: var(--text-md);
+    }
+    #Features .flex .right .flex{
+      gap: .5rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Reviews */
+    #Reviews {
+      padding-top: 3rem;
+    }
+    #Reviews h2{
+      text-align: center;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+      max-width: 50ch;
+      text-wrap: wrap;
+    }
+    #Reviews header{
+      margin-bottom: 3rem;
+      padding-left: 6.5%;
+      padding-right: .5rem;
+    }
+    #Reviews header h3{
+      margin-bottom: 1.rem;
+      font-weight: 500;
+      font-size: var(--text-md-plus);
+    }
+    #Reviews header .flex:first-of-type{
+      gap: .25rem;
+    }
+    #Reviews header .rating{
+      font-weight: 600;
+      font-size: var(--text-xxl);
+    }
+    #Reviews header .count{
+      font-weight: 400;
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+    #Reviews header .stars.flex{
+      align-items: end;
+      transform: translateY(-25%);
+    }
+    #Reviews ul{
+      align-items: center;
+    }
+    #Reviews li{
+      gap: 1rem;
+      max-width: 900px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-top: solid 1px var(--color-bg-neutral-light);
+    }
+    #Reviews .reviewer_card>.flex{
+      justify-content: space-between;
+    }
+    #Reviews .reviewer_name{
+      display: flex;
+      gap: .5rem;
+    }
+    #Reviews .reviewer_name{
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .buyer_badge{
+      color: var(--color-text-accent);
+    }
+    #Reviews .reviewer_meta .reviewer_location{
+      display: flex;
+      align-items: center;
+      font-size: var(--text-xs);
+      gap: .5rem;
+    }
+    #Reviews .reviewer_date{
+      font-size: var(--text-sm);
+    }
+    #Reviews .reviewer_card .stars.flex{
+      margin-top: 1rem;
+    }
+    #Reviews .reviewer_card h4{
+      margin-top: 1rem;
+    }
+    #Reviews .reviewer_card p{
+      font-size: var(--text-sm);
+    }
+    #Reviews hr{
+      margin-inline: auto;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      max-width: 1000px;
+      border: 1px solid var(--color-bg-neutral-light);
+    }
+    #Reviews .stars>i::before{
+      font-size: 1rem;
+    }
+
+    /* Pitch */
+    #Pitch .bg{
+    }
+    #Pitch .cta-btn.flex{
+      margin-inline: auto;
+      margin-bottom: 3rem;
+    }
+    #Pitch article{
+      max-width: 800px;
+      margin-inline: auto;
+      text-align: left;
+    }
+    #Pitch article header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    #Pitch article header h2{
+      text-align: center;
+      text-wrap: wrap;
+      max-width: 45ch;
+      margin-bottom: .5rem;
+    }
+    #Pitch article .highlight{
+      background-color: var(--color-bg-secondary);
+      color: #fff;
+      font-weight: 700;
+    }
+    #Pitch .article_body{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #Pitch .underline {
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/squiggly_line.png?v=1720631085");
+      background-size: cover;
+      width: 90%;
+      height: 11px;
+      margin-inline: auto;
+    }
+    #Pitch .underline_wrapper{
+      max-width: fit-content;
+      margin-inline: auto;
+      margin-bottom: .5rem;
+    }
+    
+    /* FAQ */
+    #FAQ{
+      padding-block: 2rem;
+    }
+    #FAQ header{
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #FAQ .justify-center{
+      justify-content: center;
+    }
+    #FAQ .pb-10{
+      padding-bottom: 3rem;
+    }
+    #FAQ .gap-6{
+      gap: 1.5rem;
+    } 
+    #FAQ .underline {
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/squiggly_line.png?v=1720631085");
+      background-size: cover;
+      width: 100%;
+      height: 10px;
+      margin-inline: auto;
+    }
+    #FAQ .underline_wrapper{
+      max-width: fit-content;
+      margin-inline: auto;
+      margin-bottom: .5rem;
+    }
+
+    /* Accordion */
+    /* Basic Accordion Styles */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      box-shadow: 0 1px 8px rgba(#000, 0.25);
+      font-size: var(--font-size-lg);
+      padding-inline: 8px;
+    }
+
+    /* Radio Inputs */
+    .accordion input[name="panel"] {
+      display: none;
+    }
+
+    /* Labels */
+
+    .accordion label {
+      position: relative;
+      display: block;
+      padding: 0.5em;
+      padding-right: 3rem;
+      text-transform: uppercase;
+      background: #fff;
+      border:#ccc 1px solid;
+      border-radius: 5px;
+      box-shadow: inset 0 2px 0 #fff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(#fff, 0.75);
+      cursor: pointer;
+      transition: all var(--timing) var(--ease);
+    }
+    @media screen and (max-width: 600px) {
+      .accordion label {
+        font-size: 1rem;
+      }
+    }
+
+    /* Panel */
+
+    .accordion label:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f078";
+      position: absolute;
+      bottom: 50%;
+      right: 1em;
+      width: 1.2em;
+      height: 1.2em;
+      line-height: 1.2em;
+      color: var(--text-color-invert);
+      text-align: center;
+      border-radius: 50%;
+      background: var(--shipping-bg);
+      box-shadow: inset 0 1px 6px rgba(#000, 0.5), 0 1px 0 #fff;
+      text-shadow: 0 1px 0 rgba(#000, 0.75);
+      transform: translateY(50%);
+      transition: all var(--duration) var(--ease);
+    }
+
+    .accordion label:hover {
+      color: var(--link-color);
+    }
+    .accordion label:hover::after {
+      background-color: var(--link-color);
+    }
+
+    .accordion input:checked + label {
+      color: var(--link-color);
+    }
+
+    .accordion input:checked + label:after {
+      /* content: '\f077'; */
+      /* adjust line-height to vertically center icon */
+      transform: translateY(50%) rotate(180deg);
+      background-color: var(--link-color);
+    }
+
+    /* Panel Content */
+    .accordion__content {
+      overflow: hidden;
+      max-height: 0rem;
+      position: relative;
+      padding: 0 1.5em;
+      border-radius: 0 0 5px 5px;
+      box-shadow: inset 4px 0 0 0 var(--link-color),
+        inset 0 3px 6px rgba(#000, 0.75);
+      background: var(--dark-grey);
+      background: linear-gradient(
+        to bottom,
+        rgba(68, 68, 68, 1) 0%,
+        rgba(34, 34, 34, 1) 100%
+      );
+      color: var(--color-text-light);
+      transition: all var(--duration) var(--ease);
+    }
+
+    .accordion__content:not(:last-of-type) {
+      box-shadow: inset 0 -2px 2px rgba(#000, 0.25),
+        inset 4px 0 0 0 var(--color-accent), inset 0 3px 6px rgba(#000, 0.75);
+    }
+
+    .accordion__content > .accordion__header {
+      padding: 1em 0;
+      font-weight: 700;
+      color: var(--color-text-light);
+    }
+
+    .accordion__content > .accordion__body {
+      font-size: 1em;
+      line-height: 1.4em;
+      padding: 0 0 1.5em;
+    }
+
+    input[name="panel"]:checked ~ .accordion__content {
+      /* Get this as close to what height you expect */
+      max-height: 60rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer .brand{
+      background-color: var(--color-bg-beige);
+
+    }
+    footer .links{
+      background-color: var(--color-bg-neutral);
+      padding-block: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin-inline: auto;
+      padding-bottom: 8rem;
+    }
+    footer .links small{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-inline: auto;
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary);
+    }
+    footer .links ul li a{
+      padding-inline: 1rem;
+    }
+    footer .links ul li .inline_border{
+      border-inline: 1px solid var(--color-bg-dark);
+    }
+
+    /* Sticky Banner */
+    #sticky-cta{
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-light);
+      padding: 1rem;
+      text-align: center;
+      z-index: 10;
+    }
+    #sticky-cta .cta-btn{
+      animation: infinite 1500ms ease-in-out both breathe;
+    }
+    @keyframes breathe {
+      0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+      50% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1.05, 1.05, 1.05);
+      }
+      100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    
+/* Exception */
+
+/* Responsive */
+@media screen and (width < 450px){
+
+  #Hero .review .review_flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #Hero .review {
+    transform: translateY(90%);
+  }
+
+  #Hero > .bg:last-child {
+    padding-block: 14rem .25rem;
+  }
+
+  .hero_body > a:nth-child(4) {
+    margin: 0 auto;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+
+  .bottom {
+    flex-direction: column-reverse;
+  }
+
+  .how > h2:nth-child(1) {
+    text-wrap: nowrap;
+  }
+
+  #Video .trust h2 {
+    text-wrap: wrap;
+    width: 22ch;
+    top: -2rem;
+    text-align: center;
+  }
+
+  #Benefits .mbg > .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #Benefits .mbg {
+    padding: 1.5rem;
+  }
+
+  #Problem > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    flex-direction: column;
+  }
+
+  #Problem > div:nth-child(1) {
+    background-image: none;
+  }
+
+  #Benefits .pitch .bg {
+    background-position: bottom left, bottom right;
+    background-size: 50%, 50%;
+    padding-bottom: 65%;
+  }
+
+  #Features > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    flex-direction: column;
+    gap: .5rem;
+    padding-block: 1rem;
+  }
+
+  #Hero .review {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .top > div:nth-child(1) > h2:nth-child(1) {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  #Benefits .pitch h2 {
+    margin-bottom: 0;
+    font-size: 28px;
+  }
+
+  #Benefits .pitch {
+    padding: 1rem 0;
+  }
+
+  #Problem h2, #Features h2, #Reviews h2, #Pitch h2 {
+    font-size: 28px;
+  }
+  #Problem .bg .wrapper .flex .right{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/sparkle_transparant.png?v=1720534648");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    position: relative;
+}
+#Problem .bg .wrapper .flex .right img{
+  display: none;
+}
+}
