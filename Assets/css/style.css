@@ -679,7 +679,6 @@ textarea:not([rows]) {
       flex-direction: column;
       justify-content: center;
       gap: 1rem;
-      padding-block: 3rem;
       flex: 1;
       text-align: center;
       max-width: 45ch;
@@ -785,13 +784,17 @@ textarea:not([rows]) {
     #Reviews .stars>i::before{
       font-size: 1rem;
     }
+    #Reviews .cta-btn.flex{
+      margin-inline: auto;
+      margin-bottom: 3rem;
+    }
 
     /* Pitch */
     #Pitch .bg{
-    }
-    #Pitch .cta-btn.flex{
-      margin-inline: auto;
-      margin-bottom: 3rem;
+      background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/right_side_250x.png?v=1720714202"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/left_side_20ed5a51-9ee9-426d-88d3-9bb40e2e9331_250x.png?v=1720719697");
+      background-position: right center, left center;
+      background-size: 12%, 12%;
+      background-repeat: no-repeat;
     }
     #Pitch article{
       max-width: 800px;
@@ -992,7 +995,7 @@ textarea:not([rows]) {
     /* Footer */
     footer .brand{
       background-color: var(--color-bg-beige);
-
+      padding-top: 1rem;
     }
     footer .links{
       background-color: var(--color-bg-neutral);
@@ -1030,6 +1033,7 @@ textarea:not([rows]) {
       padding: 1rem;
       text-align: center;
       z-index: 10;
+      box-shadow: 0px -4px 30px 4px hsla(0 0% 0% / 0.2);
     }
     #sticky-cta .cta-btn{
       animation: infinite 1500ms ease-in-out both breathe;
@@ -1052,6 +1056,37 @@ textarea:not([rows]) {
 /* Exception */
 
 /* Responsive */
+@media screen and (450px < width < 1020px){
+  #Hero .cta{
+    background-position: bottom right -75%;
+  }
+  #Pitch .bg{
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/top_tablet_1000x.png?v=1721152342"),
+    url("https://cdn.shopify.com/s/files/1/2097/6993/files/bottom_tablet_1000x.png?v=1721152342");
+    padding-block: 150px;
+    background-position: top center, bottom center;
+    background-size: contain;
+  }
+  #Features .wrapper>.flex{
+    flex-direction: column;
+    gap: 0rem;
+  }
+  #Authority .top.flex{
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+    padding-block: 1rem 0;
+  }
+  #Benefits .pitch .bg {
+    background-position: bottom left, bottom right -10%;
+    background-size: 45%, 50%;
+    padding-bottom: 65%;
+  }
+  #Problem .bg{
+    background-position: bottom 10% right;
+  }
+}
+
 @media screen and (width < 450px){
 
   #Hero .review .review_flex {
@@ -1069,6 +1104,17 @@ textarea:not([rows]) {
 
   .hero_body > a:nth-child(4) {
     margin: 0 auto;
+  }
+
+  #Plan .plan_card .underline_wrapper{
+    width: 80%;
+  }
+  #Plan .plan_card .underline_wrapper h3{
+    text-wrap: wrap;
+  }
+
+  #Authority .top {
+    padding-block: 1rem;
   }
 
   .top {
@@ -1098,6 +1144,9 @@ textarea:not([rows]) {
   #Benefits .mbg {
     padding: 1.5rem;
   }
+  #Benefits .mbg .flex.cta-btn{
+    text-wrap: nowrap;
+  }
 
   #Problem > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
     flex-direction: column;
@@ -1108,15 +1157,15 @@ textarea:not([rows]) {
   }
 
   #Benefits .pitch .bg {
-    background-position: bottom left, bottom right;
-    background-size: 50%, 50%;
+    background-position: bottom left, bottom right -10%;
+    background-size: 45%, 50%;
     padding-bottom: 65%;
   }
 
   #Features > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
     flex-direction: column;
     gap: .5rem;
-    padding-block: 1rem;
+    padding-bottom: 1rem;
   }
 
   #Hero .review {
@@ -1134,10 +1183,6 @@ textarea:not([rows]) {
     font-size: 28px;
   }
 
-  #Benefits .pitch {
-    padding: 1rem 0;
-  }
-
   #Problem h2, #Features h2, #Reviews h2, #Pitch h2 {
     font-size: 28px;
   }
@@ -1151,8 +1196,22 @@ textarea:not([rows]) {
     background-repeat: no-repeat;
     height: auto;
     position: relative;
-}
-#Problem .bg .wrapper .flex .right img{
-  display: none;
-}
+  }
+  #Problem .bg .wrapper .flex .right img{
+    display: none;
+  }
+  #Pitch .bg{
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/top_phone_450x.png?v=1721152940"),
+    url("https://cdn.shopify.com/s/files/1/2097/6993/files/bottom_phone_450x.png?v=1721152941");
+    padding-block: 175px;
+    background-position: top center, bottom center;
+    background-size: contain;
+  }
+  footer .links ul{
+    flex-direction: column;
+  }
+  footer .links ul li a.inline_border{
+    border-inline: none;
+  }
+  
 }
