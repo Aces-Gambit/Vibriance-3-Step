@@ -384,6 +384,7 @@ textarea:not([rows]) {
     #Plan .plan_card{
       border: 3px solid var(--color-bg-dark);
       border-radius: var(--border-radius-lg);
+      background-color: #fff;
       padding: 1rem;
       max-width: 55ch;
       margin-inline: auto;
@@ -412,6 +413,9 @@ textarea:not([rows]) {
       max-width: fit-content;
       margin-inline: auto;
       margin-bottom: .75rem;
+    }
+    .plan_overlap_product{
+      display: none;
     }
    
     /* Authority */
@@ -518,6 +522,10 @@ textarea:not([rows]) {
       transform: translateX(-50%);
       background-color: white;
       text-wrap: nowrap;
+    }
+    .wistia{
+      width: 1040px;
+      max-width: 90dvw;
     }
   
     /* Benefits */
@@ -1056,9 +1064,44 @@ textarea:not([rows]) {
 /* Exception */
 
 /* Responsive */
-@media screen and (450px < width < 1020px){
+@media screen and (450px <= width < 1020px){
   #Hero .cta{
     background-position: bottom right -75%;
+  }
+  #Hero > .bg:last-child {
+    padding-block: 6rem .25rem;
+  }
+  #Plan > .bg:first-child {
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/plan_top_left_mobile_tablet.png?v=1721221791"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/corrected_bottom_plan.png?v=1721221791");
+    background-position: top left, bottom center;
+    background-size: 50%, contain;
+    padding-block: 205px;
+    position: relative;
+  }
+  .media ul{
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  .media ul li{
+    flex-shrink: 0;
+  }
+  .media ul li a img{
+    max-height: 50px;
+    max-width: 120px;
+  }
+  #Plan .bg .wrapper> h2{
+    max-width: 49ch;
+    margin-inline: auto;
+  }
+
+  #Plan .bg .wrapper> h2,
+  #Plan .bg .wrapper> p,
+  #Plan .bg .wrapper> ul,
+  #Plan .bg .wrapper> div{
+    position: relative;
+    z-index: 2;
   }
   #Pitch .bg{
     background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/top_tablet_1000x.png?v=1721152342"),
@@ -1085,6 +1128,13 @@ textarea:not([rows]) {
   #Problem .bg{
     background-position: bottom 10% right;
   }
+  .plan_overlap_product{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 1;
+  }
 }
 
 @media screen and (width < 450px){
@@ -1099,7 +1149,7 @@ textarea:not([rows]) {
   }
 
   #Hero > .bg:last-child {
-    padding-block: 14rem .25rem;
+    padding-block: 20rem .25rem;
   }
 
   .hero_body > a:nth-child(4) {
@@ -1112,7 +1162,31 @@ textarea:not([rows]) {
   #Plan .plan_card .underline_wrapper h3{
     text-wrap: wrap;
   }
-
+  #Plan > .bg:first-child {
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/plan_top_left_mobile_tablet.png?v=1721221791"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/corrected_bottom_plan.png?v=1721221791");
+    background-position: top left, bottom center;
+    background-size: 50%, contain;
+    padding-block: 150px;
+  }
+  .media ul{
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .media ul li{
+    flex-shrink: 0;
+  }
+  .media ul li a img{
+    max-height: 50px;
+    max-width: 120px;
+  }
+  .plan_overlap_product{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 1;
+    max-width: 175px;
+  }
   #Authority .top {
     padding-block: 1rem;
   }
