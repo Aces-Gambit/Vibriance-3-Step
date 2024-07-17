@@ -478,6 +478,9 @@ textarea:not([rows]) {
       letter-spacing: .5px;
       font-size: var(--text-md);
     }
+    .customer_success_svg{
+      width: 300px;
+    }
   
     /* Video */
     #Video{
