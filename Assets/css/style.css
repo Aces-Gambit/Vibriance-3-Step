@@ -714,7 +714,7 @@ textarea:not([rows]) {
       text-align: center;
       margin-inline: auto;
       margin-bottom: 2rem;
-      max-width: 50ch;
+      max-width: 38ch;
       text-wrap: wrap;
     }
     #Reviews header{
