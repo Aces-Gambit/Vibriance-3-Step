@@ -534,9 +534,9 @@ textarea:not([rows]) {
     /* Benefits */
     #Benefits .bg{
       background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/serum_molecule_355x.png?v=1720534648"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/final_model_molecule_310x.png?v=1720534649");
-      background-position: 10px center, 104% center;
+      background-position: 10px bottom, 104% bottom;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 32%, 35%;
     }
     #Benefits .pitch{
       background-color: var(--color-bg-primary);
