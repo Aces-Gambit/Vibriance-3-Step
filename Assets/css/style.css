@@ -173,6 +173,12 @@ textarea:not([rows]) {
 .flag_icon{
   max-height: 16px;
 }
+.desktop_only{
+  display: block;
+}
+.mobile_only{
+  display: none;
+}
 
 /* Block */
 
@@ -1074,6 +1080,13 @@ textarea:not([rows]) {
   #Hero > .bg:last-child {
     padding-block: 6rem .25rem;
   }
+  #Hero .hero_body h3{
+    font-size: var(--text-md);
+    color: var(--color-text-primary);
+    padding-bottom: 1rem;
+    letter-spacing: .75px;
+    max-width: 36ch;
+}
   #Plan > .bg:first-child {
     background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/plan_top_left_mobile_tablet.png?v=1721221791"), url("https://cdn.shopify.com/s/files/1/2097/6993/files/corrected_bottom_plan.png?v=1721221791");
     background-position: top left, bottom center;
@@ -1137,6 +1150,12 @@ textarea:not([rows]) {
     right: 0;
     top: -20px;
     z-index: 1;
+  }
+  .desktop_only{
+    display: none;
+  }
+  .mobile_only{
+    display: block;
   }
 }
 
@@ -1290,5 +1309,10 @@ textarea:not([rows]) {
   footer .links ul li a.inline_border{
     border-inline: none;
   }
-  
+  .desktop_only{
+    display: none;
+  }
+  .mobile_only{
+    display: block;
+  }
 }
