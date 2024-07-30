@@ -1,0 +1,864 @@
+/* Variables */
+:root {
+    --bg-hue: 340;
+    --accent-hue: 160;
+    --bg-alpha:1;
+    --accent-alpha: 1;
+    --text-alpha: 1;
+    --color-bg-nav: 236, 12%, 29%;
+    --color-bg-primary: 0, 0%, 100%;
+    --color-bg-neutral-light: var(--bg-hue), 25%, 98%;
+    --color-bg-neutral: var(--bg-hue), 32%, 96%;
+    --color-bg-dark: var(--bg-hue), 50%, 90%;
+    --color-bg-darker: var(--bg-hue), 60%, 87%;
+    --color-bg-darkest: var(--bg-hue), 60%, 83%;
+    --color-accent-light: var(--accent-hue), 78%, 77%;
+    --color-accent-primary: var(--accent-hue), 78%, 57%;
+    --color-accent-dark: var(--accent-hue), 78%, 47%;
+    --color-accent-neutral: var(--accent-hue), 37%, 88%;
+    --color-shadow-purple: 340, 91%, 53%;
+    --color-text-primary: 0, 100%, 0%;
+    --color-text-secondary: 0, 0%, 45%;
+    --color-text-inverted: 0, 0%, 100%;
+    --spacing-section: 2rem;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 3rem;
+    --font-family-body: system-ui, sans-serif;
+    --font-family-heading: system-ui, sans-serif;
+    --max-width: 1000px;
+    --bg-gradient: linear-gradient(120deg, hsla(var(--color-bg-dark), var(--bg-alpha)) 0%, hsla(var(--color-bg-neutral), var(--bg-alpha)) 20%, hsla(var(--color-bg-dark), var(--bg-alpha)) 80%,hsla(var(--color-bg-darkest), var(--bg-alpha)) 100%);
+    --wistia-height: 390px;
+}
+/* Tablet Vertical*/
+@media screen and (min-width : 798px) {
+  :root {
+    --max-width: 100%;
+  }
+}
+/* Tablet Horizontal */
+@media screen and (min-width : 1000px) {
+  :root {
+    --max-width: 900px;
+  }
+}
+/* Desktop */
+@media screen and (min-width : 1250px) {
+  :root {
+    --max-width: 1150px;
+    --wistia-height: 490px;
+  }
+}
+
+/* Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth !important;
+  font-size: 18px;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.visually-hidden{
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* Mobile / Base */
+nav{
+  background-color: hsla(var(--color-bg-nav), var(--bg-alpha));
+}
+nav>*{
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+footer {
+  background-color: hsla(var(--color-bg-neutral-light), var(--bg-alpha));
+}
+footer>*{
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+main {
+  background-color: hsla(var(--color-bg-primary), var(--bg-alpha));
+}
+
+section {
+  margin-bottom: var(--spacing-section);
+}
+section>*, section> ul{
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+.cta_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 .5rem;
+  color: hsla(var(--color-text-inverted), var(--text-alpha));
+  background-color: hsla(var(--color-accent-primary), var(--accent-alpha));
+  padding: .75rem 1.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  max-width: fit-content;
+  transition: all .2s ease-in-out;
+  border: 2px solid hsla(var(--color-accent-primary), var(--accent-alpha));
+}
+.cta_btn:hover{
+  background-color: hsla(var(--color-accent-dark), var(--accent-alpha));
+  border: 2px solid hsla(var(--color-accent-dark), var(--accent-alpha));
+}
+.cta_arrow{
+  transition: all .2s ease-in-out;
+}
+.cta_btn:hover .cta_arrow{
+  transform: translateX(5px);
+}
+
+/* CTA */
+#cta{
+  margin-bottom: 0;
+}
+#cta_direct{
+  position:relative;
+}
+#cta_direct::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Oranges-Mist-Swirl-Render_edit_mobile.png?v=1712156052");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+  }
+#cta_direct h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+#cta_direct ul{
+  list-style: none;
+  padding-inline: 0;
+  margin-inline: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#cta_direct li{
+  --bg-alpha: .80;
+  --border-color: hsla(var(--color-accent-primary), var(--accent-alpha));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  background: hsla(0, 0%, 100%, var(--bg-alpha));
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 200ms;
+  text-wrap: pretty;
+  max-width: 80ch;
+  border: solid 2px var(--border-color);
+  padding: 2rem;
+  border-radius: 6px;
+}
+  #cta_direct li:hover {
+    --bg-alpha: .90;
+    background: hsla(0, 0%, 100%, var(--bg-alpha));
+  }
+#cta_direct li[data-cta="1"],
+#cta_direct li[data-cta="3"]{
+  --border-color: hsla(var(--color-accent-neutral), var(--accent-alpha));
+}
+#cta_direct li h3{
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: center;
+  letter-spacing: -1px;
+  margin: 0 auto;
+}
+#cta_direct li p{
+  font-size: var(--font-size-sm);
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: left;
+}
+.cta_cta-direct{
+  margin-inline: auto;
+  padding: .5rem 3rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0, .25);
+}
+.cta_cta-direct[data-cta="1"],
+.cta_cta-direct[data-cta="3"]{
+  color: hsla(var(--color-accent-primary), var(--accent-alpha));
+  background-color: hsla(0, 100%, 100%, .5);
+  border: 2px solid hsla(var(--color-accent-primary), var(--accent-alpha));
+  transition: all .2s ease-in-out;
+}
+.cta_cta-direct[data-cta="1"]:hover,
+.cta_cta-direct[data-cta="3"]:hover{
+  color: hsla(var(--color-text-inverted), var(--text-alpha));
+  border: 2px solid hsla(var(--color-accent-light), var(--accent-alpha));
+  background-color: hsla(var(--color-accent-light), var(--accent-alpha));
+}
+.cta_direct-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.cta_direct-price{
+  font-size: 2.875rem;
+  font-weight: 600;
+  letter-spacing: -3px;
+}
+.cta_direct-unit{
+  font-size: var(--font-size-xs);
+  color: hsla(var(--color-text-secondary), var(--text-alpha));
+}
+@media screen and (min-width: 798px) {
+  #cta_direct{
+    margin: 0;
+    padding-block: 4rem 6rem;
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #cta_direct::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Oranges-Mist-Swirl-Render_edit_1200x.png?v=1710954538");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+  }
+  #cta_direct h2{
+    font-size: 2.875rem;
+    text-shadow: 0px 0px 4px hsla(0,0%,100%, 75%);
+  }
+  #cta_direct ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    text-align: left;
+    padding-top: 1rem;
+  }
+  #cta_direct li{
+    --bg-alpha: .80;
+    background: hsla(0, 0%, 100%, var(--bg-alpha));
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 200ms;
+  }
+  #cta_direct li:hover {
+    --bg-alpha: .90;
+    background: hsla(0, 0%, 100%, var(--bg-alpha));
+  }
+}
+
+/* Refunds */
+#refunds-final{
+  padding-block: 2rem;
+  background: hsla(var(--color-accent-light), var(--accent-alpha));
+  max-width: 100vw;
+  margin-bottom: 0;
+}
+#refunds-final .wrapper{
+  max-width: 600px;
+}
+#refunds-final img{
+    box-shadow: 0 0 10px 10px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Guide */
+#guide{
+  margin-bottom: 0;
+}
+#guide_testimonials {
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding-inline: 0;
+    padding-block: var(--spacing-section);
+    max-width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Orange-Pink-Swirl_Margin_Mobile.png?v=1712155692");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+  }
+#guide_testimonials h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+  text-shadow: 1px 1px 10px white;
+}
+.guide_testimonials-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: .5rem;
+  
+}
+.guide_testimonials-flex li{
+  --bg-alpha: .70;
+  --accent-alpha: .1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  text-wrap: pretty;
+  max-width: 80ch;
+  background-color: hsla(var(--color-bg-dark), var(--bg-alpha));
+  box-shadow: 0 0 80px 5px hsla(var(--color-shadow-purple), var(--accent-alpha));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.guide_testimonials-author{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+.guide_testimonials-author h3{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.guide_testimonials-author p{
+  font-size: var(--font-size-sm);
+  color: hsla(var(--color-text-secondary), var(--text-alpha));
+}
+.guide_testimonials-author img{
+  border-radius: 6px;
+}
+.guide_testimonials-stars i{
+  font-size: var(--font-size-sm);
+}
+
+@media screen and (min-width: 798px) {
+  #guide{
+    margin-bottom: var(--spacing-section);
+  }
+  #guide_testimonials {
+    margin-inline: 0;
+    padding-inline: 0;
+    max-width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Orange-Pink-Swirl_Margin_1920x.png?v=1709239940");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+  }
+  #guide_testimonials h2{
+    font-size: 2.875rem;
+  }
+  .guide_testimonials-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    
+  }
+  .guide_testimonials-flex li{
+    gap: 1rem;
+    text-wrap: pretty;
+    max-width: 48ch;
+    padding: 2rem;
+  }
+  .guide_testimonials-stars i{
+    font-size: var(--font-size-md);
+  }
+}
+/* Tablet Horizontal */
+@media screen and (min-width: 1000px) {
+
+}
+/* Desktop */
+@media screen and (min-width: 1250px) {
+
+}
+/* Guide */
+#guide{
+  margin-bottom: 0;
+}
+#guide_testimonials {
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding-inline: 0;
+    padding-block: var(--spacing-section);
+    max-width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Orange-Pink-Swirl_Margin_Mobile.png?v=1712155692");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+  }
+#guide_testimonials h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+  text-shadow: 1px 1px 10px white;
+}
+.guide_testimonials-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: .5rem;
+  
+}
+.guide_testimonials-flex li{
+  --bg-alpha: .70;
+  --accent-alpha: .1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  text-wrap: pretty;
+  max-width: 80ch;
+  background-color: hsla(var(--color-bg-dark), var(--bg-alpha));
+  box-shadow: 0 0 80px 5px hsla(var(--color-shadow-purple), var(--accent-alpha));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.guide_testimonials-author{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+.guide_testimonials-author h3{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.guide_testimonials-author p{
+  font-size: var(--font-size-sm);
+  color: hsla(var(--color-text-secondary), var(--text-alpha));
+}
+.guide_testimonials-author img{
+  border-radius: 6px;
+}
+.guide_testimonials-stars i{
+  font-size: var(--font-size-sm);
+}
+
+@media screen and (min-width: 798px) {
+  #guide{
+    margin-bottom: var(--spacing-section);
+  }
+  #guide_testimonials {
+    margin-inline: 0;
+    padding-inline: 0;
+    max-width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/2097/6993/files/Orange-Pink-Swirl_Margin_1920x.png?v=1709239940");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+  }
+  #guide_testimonials h2{
+    font-size: 2.875rem;
+  }
+  .guide_testimonials-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    
+  }
+  .guide_testimonials-flex li{
+    gap: 1rem;
+    text-wrap: pretty;
+    max-width: 48ch;
+    padding: 2rem;
+  }
+  .guide_testimonials-stars i{
+    font-size: var(--font-size-md);
+  }
+}
+/* Tablet Horizontal */
+@media screen and (min-width: 1000px) {
+
+}
+/* Desktop */
+@media screen and (min-width: 1250px) {
+
+}
+
+/* Footer */
+.footer_flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  row-gap: 2rem;
+}
+.footer_content-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  max-width: 30ch;
+}
+.footer_content-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 4rem;
+}
+.footer_content-right h3{
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: left;
+  padding-bottom: 1.5rem;
+}
+.footer_content-right p{
+  font-size: var(--font-size-sm);
+  color: hsla(var(--color-text-primary), var(--text-alpha));
+  text-align: left;
+}
+.footer_content-right a{
+  font-size: var(--font-size-sm);
+  color: hsla(var(--color-text-secondary), var(--text-alpha));
+  text-align: left;
+}
+.footer_bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.footer_bottom ul{
+  display: flex;
+  gap: 1rem;
+}
+.footer_contact-message{
+  max-width: 30ch;
+}
+#contacts a{
+  transition: all 200ms;
+}
+#contacts a:hover{
+  color: hsla(var(--color-accent-dark), var(--accent-alpha));
+}
+
+.footer_terms-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 798px) {
+  .footer_flex{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 3rem;
+    max-width: var(--max-width);
+    padding-block: 4rem;
+  }
+  .footer_content-right{
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .footer_content-right ul{
+    max-width: 30ch;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer_content-right h3{
+    font-size: 1.15rem;
+  }
+  .footer_content-right p{
+    font-size: var(--font-size-md);
+  }
+  .footer_content-right a{
+    font-size: var(--font-size-md);
+  }
+  .footer_bottom{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    max-width: var(--max-width);
+    padding-block: 2rem;
+  }
+}
+
+/* Utility */
+.desktop-only{
+  display: none;
+}
+.mobile-only{
+  display: block;
+}
+@media screen and (min-width: 798px) {
+  .desktop-only{
+    display: block;
+  }
+  .mobile-only{
+    display: none;
+  }
+}
+
+/* Swiper Carousel */
+.swiper{
+  max-width: min(calc(100% - 2rem), 800px);
+  margin: 2rem auto;
+}
+.swiper-wrapper{
+  margin: 0 auto 2rem;
+}
+.swiper-slide{
+  display: grid;
+  place-content: center;
+}
+.swiper-pagination{
+  --swiper-pagination-bottom: 8px;
+}
+.swiper-pagination-bullet-active{
+  --swiper-pagination-color: hsla(var(--color-accent-primary), var(--accent-alpha));
+}
+.swiper-slide > img{
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.swiper-blog{
+  overflow:hidden;
+  width:375px;
+}
+.swiper-pagination-blog{
+  position:relative;
+}
+
+/* Animation's */
+:root {
+  --animation-duration: 1s; /* Adjustable duration */
+  --animation-easing: ease-out; /* Adjustable easing */
+}
+
+/* Initial state for elements with data-enter attributes */
+[data-enter], [data-enter-stagger]>*, [data-enter-text]>*, [data-enter-text] {
+  opacity: 0;
+}
+.text-parent-opacity-active{
+  opacity: 1;
+}
+
+/* Class to overwrite initial opacity for low-concurrency devices */
+.no-animation {
+  opacity: 1;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Utility class for overflow control */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Keyframes for directional animations */
+@keyframes enterFromLeft {
+  0% { opacity: 0; transform: translateX(-100%); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes enterFromRight {
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateX(0); }
+  
+}
+@keyframes enterFromTop {
+  0% { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes enterFromBottom {
+  0% { opacity: 0; transform: translateY(100%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyframes for text animation */
+@keyframes textEnter {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bgEnter {
+  0% {opacity: 0; clip-path: circle(0% at 50% 50%);}
+  100% {opacity: .1; clip-path: circle(100%) at 50% 50%;}
+}
+
+/* Classes for directional animations */
+.enter-left { animation: enterFromLeft var(--animation-duration) var(--animation-easing) forwards; }
+.enter-right { animation: enterFromRight var(--animation-duration) var(--animation-easing) forwards; }
+.enter-top { animation: enterFromTop var(--animation-duration) var(--animation-easing) forwards; }
+.enter-bottom { animation: enterFromBottom var(--animation-duration) var(--animation-easing) forwards; }
+
+/* Class for text animation */
+.text-enter {
+  animation: textEnter var(--animation-duration) var(--animation-easing) forwards;
+  display: inline-block;
+}
+/* Class for background animation */
+.bg-enter {
+  animation: bgEnter var(--animation-duration) var(--animation-easing) forwards;
+}
+
+/* Countdown */
+.hours, .minutes, .seconds{
+  position: relative;
+  width: 80px;
+}
+
+.hours::before, .minutes::before, .seconds::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: solid 4px #b91c1c;
+}
+
+@media screen and (min-width: 798px) {
+  .hours, .minutes, .seconds{
+    position: relative;
+    width: 80px;
+   
+  }
+  .hours::before, .minutes::before, .seconds::before{
+    content: '';
+    width: 75px;
+    height: 75px;
+  }
+}

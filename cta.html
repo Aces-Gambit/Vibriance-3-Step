@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets/css/style-final.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="Assets/js/swiper.js" type="module"></script>
+    <script src="Assets/js/countdown.js" defer></script>
+    <script src="Assets/js/modular-scroll-animation.js" defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+  </head>
+  <body>
+    <header></header>
+    <section id="cta">
+      <section id="cta_direct">
+        <h2 data-enter-text="">Claim Your Bundle</h2>
+
+        <div class="flex flex-col items-center my-2 text-3xl text-center z-10">
+          <div id="clockdiv" class="grid grid-cols-3 gap-2 md:gap-6">
+            <div class="w-full flex flex-col items-center">
+              <div
+                class="hours text-red-700 font-semibold p-4 my-4 block max-w-[90px]"
+              ></div>
+              <div class="smalltext text-sm text-gray-400 z-10">Hour</div>
+            </div>
+            <div class="w-full flex flex-col items-center">
+              <div
+                class="minutes text-red-700 font-semibold p-4 my-4 block max-w-[90px]"
+              ></div>
+              <div class="smalltext text-sm text-gray-400 z-10">Minute</div>
+            </div>
+            <div class="w-full flex flex-col items-center">
+              <div
+                class="seconds text-red-700 font-semibold p-4 my-4 block max-w-[90px]"
+              ></div>
+              <div class="smalltext text-sm text-gray-400 z-10">Second</div>
+            </div>
+          </div>
+        </div>
+
+        <ul data-enter-stagger="bottom">
+          <li data-cta="1">
+            <h3>One Serum</h3>
+            <img
+              src="https://cdn.shopify.com/s/files/1/2097/6993/files/Serum_Render_Edit_500x.png?v=1710951894"
+              alt="Noche Y Dia Vitamin C Serum"
+              width="250"
+              height="250"
+            />
+            <div class="cta_direct-flex">
+              <div class="cta_direct-price">$30</div>
+              <div class="cta_direct-unit">
+                per bottle <br />
+                +Shipping <br />
+                <span class="text-red-600">25% Discount</span>
+              </div>
+            </div>
+            <a
+              href="https://www.nocheskincare.com/cart/39391864782913:1"
+              class="cta_btn cta_cta-direct"
+              data-cta="1"
+              target="_blank"
+            >
+              Order Now
+            </a>
+          </li>
+          <li data-cta="2">
+            <h3>Two Serum</h3>
+            <img
+              src="https://cdn.shopify.com/s/files/1/2097/6993/files/two_serum_flourish_v2_250x.png?v=1722358898"
+              alt="Noche Y Dia Vitamin C 2 Serum Bundle"
+              width="250"
+              height="250"
+            />
+            <div class="cta_direct-flex">
+              <div class="cta_direct-price">$50</div>
+              <div class="cta_direct-unit">
+                per bundle <br />
+                Free Shipping <br />
+                <span class="text-red-600">37% Discount</span>
+              </div>
+            </div>
+            <a
+              href="https://www.nocheskincare.com/cart/39435333468225:1"
+              class="cta_btn cta_cta-direct"
+              data-cta="2"
+              target="_blank"
+            >
+              Order Now
+            </a>
+          </li>
+          <li data-cta="3">
+            <h3>Four Serum</h3>
+            <img
+              src="https://cdn.shopify.com/s/files/1/2097/6993/files/four_serum_flourish_250x.png?v=1722357619"
+              alt="Noche Y Dia Vitamin C 4 Serum Bundle"
+              width="250"
+              height="250"
+            />
+            <div class="cta_direct-flex">
+              <div class="cta_direct-price">$90</div>
+              <div class="cta_direct-unit">
+                per bundle <br />
+                Free Shipping <br />
+                <span class="text-red-600">43% Discount</span>
+              </div>
+            </div>
+            <a
+              href="https://www.nocheskincare.com/cart/39435334778945:1"
+              class="cta_btn cta_cta-direct"
+              data-cta="3"
+              target="_blank"
+            >
+              Order Now
+            </a>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section id="refunds-final">
+      <div class="wrapper">
+        <img
+          src="https://www.nocheskincare.com/cdn/shop/products/NocheRefundBlossomsUpdatedMarch2312000_f3e91ffe-b325-45ae-b099-b2b0acd5ac89_1024x1024@2x.jpg?v=1678375751"
+          alt=""
+        />
+      </div>
+    </section>
+    <section id="guide">
+      <section id="guide_testimonials">
+        <div>
+          <h2 data-enter-text="">Satisfied Skincare Shoppers</h2>
+          <ul class="guide_testimonials-flex" data-enter-stagger="right">
+            <li>
+              <div>
+                <div class="guide_testimonials-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>
+                  The Vitamin C Serum from Noche evened out my skin texture.
+                  Combined with their cleanser and cream, my skin feels soft and
+                  smooth. It's perfect for my cracked and dry, sensitive skin.
+                </p>
+              </div>
+              <div class="guide_testimonials-author">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Shanice-600_80x.jpg?v=1709226464"
+                  alt="author"
+                />
+                <div>
+                  <h3>Shanice</h3>
+                  <p>59 Years Young</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="guide_testimonials-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>
+                  My aging skin regained its glow after Noche's Vitamin C Serum.
+                  It's brighter and feels revived. The Serum also visibly
+                  smoothed my forehead and cheek fine lines. A few daily drops
+                  have made my skin look sooo much smoother.
+                </p>
+              </div>
+              <div class="guide_testimonials-author">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Carmen-600_80x.jpg?v=1709226464"
+                  alt="author"
+                />
+                <div>
+                  <h3>Carmen</h3>
+                  <p>67 Years Young</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- Slider main container -->
+          <div class="swiper" data-enter="left">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper prevent-select">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_3.jpg?v=1699372350"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_8.jpg?v=1699372350"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_6.jpg?v=1699372350"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_20_250x.png?v=1712767366"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_7.jpg?v=1699372350"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_2.jpg?v=1699372350"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_17.jpg?v=1699389651"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/2097/6993/files/Pure_Serum_Review_Img_18.jpg?v=1699389651"
+                  alt="Serum User Selfie"
+                  width="250"
+                  height="250"
+                />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <div class="footer_flex">
+        <div class="footer_content-left">
+          <img
+          src="https://cdn.shopify.com/s/files/1/2097/6993/files/Noche_Logo_Text_250x.png?v=1667926575"
+          alt="Logo" / data-enter="bottom" >
+          <p data-enter-text="">
+            Ease aging signs with our Vitamin C 3-Step System, and unveil your
+            skin's true beauty.
+          </p>
+          <a
+            href="#cta"
+            class="cta_btn cta_cta-transitional desktop-only text-center"
+            data-enter="bottom"
+            >Order Now</a
+          >
+        </div>
+        <div class="footer_content-right">
+          <div>
+            <h3 data-enter-text="">Products</h3>
+            <ul data-enter-stagger="bottom">
+              <li>
+                <a
+                  href="https://www.nocheskincare.com/pages/why-buy-from-us"
+                  target="_blank"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.nocheskincare.com/pages/noche-faqs"
+                  target="_blank"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.nocheskincare.com/pages/contact-us"
+                  target="_blank"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-enter-text="">Our Commitment</h3>
+            <ul data-enter-stagger="bottom">
+              <li>
+                <a
+                  href="https://www.nocheskincare.com/policies/shipping-policy"
+                  target="_blank"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.nocheskincare.com/pages/noche-skincare-returnless-refunds"
+                  target="_blank"
+                  >Refund Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="contacts">
+            <h3 data-enter-text="">Contacts</h3>
+            <ul data-enter-stagger="bottom">
+              <li>
+                <p class="footer_contact-message">Feel free to get in touch!</p>
+              </li>
+              <li>
+                <strong><a href="tel:18882128712">1-888-212-8712</a></strong>
+              </li>
+              <li>
+                <strong
+                  ><a href="mailto:info@nocheskincare.com"
+                    >info@nocheskincare.com</a
+                  ></strong
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="footer_bottom">
+        <p>&copy; 2024 Noche Y Dia Skincare. All Rights Reserved.</p>
+        <div class="footer_terms-flex">
+          <ul>
+            <li>
+              <a href="https://www.nocheskincare.com/pages/terms-of-service"
+                >Terms of Use</a
+              >
+            </li>
+            <li>
+              <a href="https://privacy.godwindirect.com/privacy-policy"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+          <div style="display: flex; column-gap: 2rem; justify-content: center">
+            <a
+              class="truevault-polaris-privacy-notice"
+              style="color: white !important"
+              href="https://privacy.godwindirect.com/privacy-policy#california-privacy-notice"
+              noreferrer
+              noopener
+              hidden
+              >California Privacy Notice</a
+            >
+            <a
+              class="truevault-polaris-optout"
+              style="color: white !important"
+              href="https://privacy.godwindirect.com/opt-out"
+              noreferrer
+              noopener
+              hidden
+            >
+              <img
+                src="https://polaris.truevaultcdn.com/static/assets/icons/optout-icon-blue.svg"
+                alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+                style="vertical-align: middle; display: inline-block"
+                height="14px"
+              />
+              Your Privacy Choices
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
